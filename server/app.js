@@ -10,7 +10,11 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 //
-const publicPath = path.join(__dirname, '../client/build');
+// console.log(__dirname.split('\\').slice(0, -1).join('\\'));
+const publicPath = path.join(
+  __dirname.split('\\').slice(0, -1).join('\\'),
+  'client/build'
+);
 app.use(cors());
 app.use(express.static(publicPath));
 //
